@@ -1,16 +1,13 @@
-import Navbar from "./components/Navbar"
-import HomePage from "./pages/HomePage"
-
+import Navbar from "./components/Navbar";
+import HomePage from "./pages/HomePage";
 
 function App() {
-  
   return (
-    <div className=" w-10/12 m-auto ">
-      <Navbar/>
-      <HomePage/>
+    <div className="w-full max-w-screen-lg mx-auto px-4">
+      <Navbar />
+      <HomePage />
     </div>
-
-  )
+  );
 }
 
-export default App
+export default App;

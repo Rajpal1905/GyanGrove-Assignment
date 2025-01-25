@@ -10,16 +10,16 @@ function AddItemForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(addItem(formData));
-    toast.success("Item added succesfully")
+    toast.success("Item added successfully");
     setFormData({ name: "", category: "", quantity: 0 });
   };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4 mb-6">
-      <div className="flex gap-4">
+      <div className="flex flex-col md:flex-row gap-2 md:gap-4">
         <input
           type="text"
-          className="flex-1 border border-gray-300 rounded-lg p-2"
+          className="flex-1 border border-gray-300 rounded-lg p-2 w-full"
           placeholder="Item Name"
           value={formData.name}
           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -27,7 +27,7 @@ function AddItemForm() {
         />
         <input
           type="text"
-          className="flex-1 border border-gray-300 rounded-lg p-2"
+          className="flex-1 border border-gray-300 rounded-lg p-2 w-full"
           placeholder="Category"
           value={formData.category}
           onChange={(e) => setFormData({ ...formData, category: e.target.value })}
@@ -35,7 +35,7 @@ function AddItemForm() {
         />
         <input
           type="number"
-          className="w-30 border border-gray-300 rounded-lg p-2"
+          className="w-full md:w-32 border border-gray-300 rounded-lg p-2"
           placeholder="Qty"
           value={formData.quantity}
           onChange={(e) =>
@@ -46,7 +46,7 @@ function AddItemForm() {
       </div>
       <button
         type="submit"
-        className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg"
+        className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg w-full md:w-auto"
       >
         Add Item
       </button>
